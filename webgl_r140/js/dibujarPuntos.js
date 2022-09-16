@@ -3,19 +3,19 @@
 */
 
 //Shader de vertices
-const VSHADERS_SOURCE = `
+const VSHADER_SOURCE = `
     attribute vec3 posicion;
     void main(){
-        gl_Position = vec4(posicion, 1.0);
+        gl_Position = vec4(posicion,1.0);
         gl_PointSize = 10.0;
     }
 `
 
-//SHADER de fragmentos
-const FSHADERS_SOURCE = `
+// Shader de fragmentos
+const FSHADER_SOURCE = `
     uniform highp vec3 color;
     void main(){
-        gl_FragColor = vec4(color, 1.0) 
+        gl_FragColor = vec4(color,1.0);
     }
 `
 
