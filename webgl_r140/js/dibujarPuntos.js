@@ -30,7 +30,7 @@ function main(){
     const gl =  getWebGLContext(canvas);
 
     //Cargo shaders en programa
-    if(!initShaders(gl,VSHADER_SOURCE,FSHADERS_SOURCE)){
+    if(!initShaders(gl,VSHADER_SOURCE,FSHADER_SOURCE)){
         console.log("La cosa no va bien, no carga shaders");
     }
 
