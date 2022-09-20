@@ -42,7 +42,7 @@ function main(){
     gl.clearColor(0.0, 0.0 ,0.3 ,1.0);
 
     //Localiza atributo shaders posicion
-    var coordenadas = gl.getAttribLocation(gl.program, 'posicion'); //devuelvo el attributo posicion 
+    var coordenadas = gl.getAttribLocation( gl.program, 'posicion'); //devuelvo el attributo posicion 
 
     //Crear Buffer, etc..
     const bufferVertices = gl.createBuffer();
