@@ -24,8 +24,7 @@ const FSHADER_SOURCE = `
 `
 
 //Variables globales
-const clicks = [];
-let colorFragmento;
+var bufferVertices = null;
 
 function main(){
     
@@ -45,7 +44,7 @@ function main(){
     var coordenadas = gl.getAttribLocation( gl.program, 'posicion'); //devuelvo el attributo posicion 
 
     //Crear Buffer, etc..
-    const bufferVertices = gl.createBuffer();
+    bufferVertices = gl.createBuffer();
     gl.bindBuffer( gl.ARRAY_BUFFER, bufferVertices ); //le referencia al buffer creado que es un buffer array
     gl.vertexAttribPointer( coordenadas, 3, gl.FLOAT, false, 0, 0 ); //enllaça bufferVertices amb coordenadas
     gl.enableVertexAttribArray( coordenadas ); //activa la matriu d'atributs de vèrtex genèric a l'índex especificat a la llista de matrius d'atributs
