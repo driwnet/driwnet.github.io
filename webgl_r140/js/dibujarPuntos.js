@@ -5,7 +5,7 @@
 //Shader de vertices
 const VSHADER_SOURCE = `
     attribute vec3 posicion;
-    varying highp vec4 vColor
+    varying highp vec4 vColor;
     void main(){
         gl_Position = vec4(posicion,1.0);
         gl_PointSize = 10.0;
