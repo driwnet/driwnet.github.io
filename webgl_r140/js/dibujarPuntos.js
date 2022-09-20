@@ -12,16 +12,14 @@ const VSHADER_SOURCE = `
         // EL s.r es de 2x2 y esta centrat:
         highp float distancia = sqrt(dot(posicion.xy, posicion.xy));
         vColor = vec4(1.0 - distancia, 1.0 - distancia, 0.0, 1.0);
-    }
-`
+    }`;
 
 // Shader de fragmentos
 const FSHADER_SOURCE = `
-    uniform highp vec3 color;
+    varying highp vec4 vColor;
     void main(){
-        gl_FragColor = vec4(color,1.0);
-    }
-`
+        gl_FragColor = vColor;
+    }`;
 
 //Variables globales
 var bufferVertices = null;
