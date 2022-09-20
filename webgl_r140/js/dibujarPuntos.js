@@ -59,6 +59,8 @@ function main(){
     render( gl );
 }
 
+var clicks = [];
+
 function click( evento, gl, canvas )
 {
     // Recuperar la posicion del click
@@ -91,6 +93,6 @@ function render( gl )
 	// Rellena el BO activo con las coordenadas y lo manda a proceso
     gl.bindBuffer(gl.ARRAY_BUFFER, bufferVertices);
 	gl.bufferData( gl.ARRAY_BUFFER, puntos, gl.STATIC_DRAW );
-    gl.drawArrays( gl.POINTS, 0, clicks.length/3 );	
-	gl.drawArrays( gl.LINE_STRIP, 0, clicks.length/3 );	
+    gl.drawArrays( gl.POINTS, 0, puntos.length/3 );	
+	gl.drawArrays( gl.LINE_STRIP, 0, puntos.length/3 );	
 }
