@@ -38,13 +38,13 @@ function main(){
     gl.clearColor(0.0, 0.0 ,0.3 ,1.0);
 
     //Localiza atributo shaders posicion
-    const coordenadas = gl.getAttribLocation(gl.program, 'posicion');
+    const coordenadas = gl.getAttribLocation(gl.program, 'posicion'); //devuelvo el attributo posicion 
 
     //Crear Buffer, etc..
     const bufferVertices = gl.createBuffer();
-    gl.bindBuffer( gl.ARRAY_BUFFER, bufferVertices );
-    gl.vertexAttribPointer( coordenadas, 3, gl.FLOAT, false, 0, 0 );
-    gl.enableVertexAttribArray( coordenadas );
+    gl.bindBuffer( gl.ARRAY_BUFFER, bufferVertices ); //le referencia al buffer creado que es un buffer array
+    gl.vertexAttribPointer( coordenadas, 3, gl.FLOAT, false, 0, 0 ); //enllaça bufferVertices amb coordenadas
+    gl.enableVertexAttribArray( coordenadas ); //activa la matriu d'atributs de vèrtex genèric a l'índex especificat a la llista de matrius d'atributs
 
     // Asignar el mismo color a todos los puntos
     colorFragmento = gl.getUniformLocation( gl.program, 'color' );
@@ -89,5 +89,5 @@ function render( gl )
 
 	// Rellena el BO activo con las coordenadas y lo manda a proceso
 	gl.bufferData( gl.ARRAY_BUFFER, new Float32Array(clicks), gl.STATIC_DRAW );
-	gl.drawArrays( gl.POINTS, 0, clicks.length/3 )	
+	gl.drawArrays( gl.LINE_STRIP, 0, clicks.length/3 )	
 }
