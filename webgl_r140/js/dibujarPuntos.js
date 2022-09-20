@@ -10,8 +10,8 @@ const VSHADER_SOURCE = `
         gl_Position = vec4(posicion,1.0);
         gl_PointSize = 10.0;
         // EL s.r es de 2x2 y esta centrat:
-        highp float distancia = sqrt(dot(posicion.xy, posicion.xy))
-        vColor = vec4(1.0 - distancia, 1.0 - distancia, 0.0, 1.0)
+        highp float distancia = sqrt(dot(posicion.xy, posicion.xy));
+        vColor = vec4(1.0 - distancia, 1.0 - distancia, 0.0, 1.0);
     }
 `
 
@@ -85,13 +85,13 @@ function click( evento, gl, canvas )
 
 function render( gl )
 {
-    var puntos = new Float32Array(clicks) //array de todos los puntos guardados
+    var puntos = new Float32Array(clicks); //array de todos los puntos guardados
 	// Borra el canvas con el color de fondo
 	gl.clear( gl.COLOR_BUFFER_BIT );
 
 	// Rellena el BO activo con las coordenadas y lo manda a proceso
-    gl.bindBuffer(gl.ARRAY_BUFFER, bufferVertices)
+    gl.bindBuffer(gl.ARRAY_BUFFER, bufferVertices);
 	gl.bufferData( gl.ARRAY_BUFFER, puntos, gl.STATIC_DRAW );
-    gl.drawArrays( gl.POINTS, 0, clicks.length/3 )	
-	gl.drawArrays( gl.LINE_STRIP, 0, clicks.length/3 )	
+    gl.drawArrays( gl.POINTS, 0, clicks.length/3 );	
+	gl.drawArrays( gl.LINE_STRIP, 0, clicks.length/3 );	
 }
