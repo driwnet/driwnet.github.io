@@ -68,7 +68,8 @@ function loadScene()
 
     // model importado
     const loader =  new THREE.ObjectLoader();
-    loader.load( "models/soldado/soldado.json", function(objeto){
+    loader.load( "models/soldado/soldado.json", 
+    function(objeto){
         cubo.add( objeto );
         objeto.position.set( 0, 1, 0);
     })
