@@ -46,8 +46,23 @@ function loadScene()
     //Robot completo
     robot = new THREE.Object3D();
 
-    //Base
+    //Base (Tiene dentro al brazo)
     base = new THREE.Mesh(THREE.CylinderGeometry(50, 50, 15, 32), material);
+    base.position.set(0,0,0);
 
-    
+    //Brazo (4 elementos: eje, esparrago, rotula, antebrazo)
+    brazo = new THREE.Object3D();
+
+    //elemento eje
+    var eje = new THREE.Mesh(THREE.CylinderGeometry(20, 20, 18, 32), material);
+    eje.rotateZ(Math.PI/2);
+    brazo.add(eje);
+
+    //elemento esparrago
+    var esparrago = new THREE.Mesh(THREE.BoxGeometry(18,120,12), material);
+    esparrago.rotateY(Math.PI/2);
+    esparrago.position.set(0,50,0);
+    //elemento rotula
+    var rotula = new THREE.Mesh(THREE.SphereGeometry(20, 20, 20), material);
+
 }
