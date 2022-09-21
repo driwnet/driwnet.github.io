@@ -94,5 +94,8 @@ function loadScene()
 
     //Elemento mano (3 elementos:mano, pinzalz, pinzaDe)
     mano = new THREE.Mesh(THREE.CylinderGeometry(15,15,40), material);
+    mano.position.set(0,80,0);
+    mano.rotateZ(Math.PI/2);
 
+    
 }
