@@ -31,9 +31,11 @@
             <h2>Threejs Example</h2>
         </div>
 		<!--scrips biblioteca-->
-		<script src="lib/three.min.js"></script>
+		<script type="importmap">
+            { "imports": { "three": "./lib/three.module.js"} }
+        </script>
 
 		<!-- mi script -->
-		<script src="js/EscenaBasica.js"></script>
+		<script type = "modules" src="js/EscenaBasica.js"></script>
 	</body>
 </html>
