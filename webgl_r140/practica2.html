@@ -31,7 +31,9 @@
             <h2>Robot</h2>
         </div>
 		<!--scrips biblioteca-->
-		<script src="lib/three.min_r140.js"></script>
+		<script type="importmap">
+            { "imports": { "three": "./lib/three.module.js"} }
+        </script>
         <script src="lib/coordinates.js"></script>
 
 		<!-- mi script -->
