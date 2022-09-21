@@ -49,6 +49,16 @@ function loadScene()
     suelo.rotation.x = -Math.PI/2; //voy a girar 90º
     scene.add(suelo);
 
+    // cubo 
+    const cubo = new THREE.Mesh(new THREE.BoxGeometry(2,2,2), material);
+    // esfera
+    const esfera = new THREE.Mesh(new THREE.SphereGeometry(1, 20, 20), material);
+
+    scene.add(cubo);
+    scene.add(esfera);
+
+    scene.add(new THREE.AxesHelper(3));
+
 }
 function render()
 {
