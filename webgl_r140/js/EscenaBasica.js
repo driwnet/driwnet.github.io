@@ -54,8 +54,18 @@ function loadScene()
     // esfera
     const esfera = new THREE.Mesh(new THREE.SphereGeometry(1, 20, 20), material);
 
-    scene.add(cubo);
-    scene.add(esfera);
+    esferaCubo = new THREE.Object3D();
+    //añado a la esfera cubo sus objetos
+    esferaCubo.add(cubo);
+    esferaCubo.add(esfera);
+    //Hago tranformaciones
+    cubo.position.x = -1; //matriz modelo cubo x = -1
+    esfera.position.x = 1;
+    esferaCubo.position.y = 1.5; //la matriz de este model, translacion en y de 1.5, como se acumulan las matrices realment a cubo y esfera le meto otra tranformacion
+
+    scene.add(esferaCubo);
+
+
 
     scene.add(new THREE.AxesHelper(3));
 
