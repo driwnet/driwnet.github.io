@@ -72,14 +72,22 @@ function loadScene()
     function(objeto){
         cubo.add( objeto );
         objeto.position.set( 0, 1, 0);
-    })
+    });
 
 
     scene.add(new THREE.AxesHelper(3));
 
 }
+
+function update()
+{
+    angulo += 0.01;
+    esferaCubo.rotation.y = angulo;
+}
+
 function render()
 {
     requestAnimationFrame(render);
+    update();
     renderer.render(scene, camera);
 }
