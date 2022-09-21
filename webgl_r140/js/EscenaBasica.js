@@ -9,7 +9,7 @@
 
 //Modulos necesarios
 import * as THREE from "../lib/three.module.js";
-import {GLTFLoades} from "../lib/GLTFLoader.module.js";
+import {GLTFLoader, GLTFLoades} from "../lib/GLTFLoader.module.js";
 
 //Variables De consenso
 let renderer, scene, camera;
@@ -74,6 +74,17 @@ function loadScene()
         objeto.position.set( 0, 1, 0);
     });
 
+    //modelo importado en formato GLTF
+    const glloader = new GLTFLoader();
+    glloader.load( "models/RobotExpressive.glb",
+    function(gltf)
+    {
+        gltf.scene.position.y = 1;
+        gltf.scene.rotation.y = -Math.PI/2;
+        esfera.add(gltf.scene);
+        console.log("ROBOT");
+        console.log(gltf);
+    })
 
     scene.add(new THREE.AxesHelper(3));
 
