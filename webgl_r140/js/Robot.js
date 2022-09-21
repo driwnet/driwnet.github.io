@@ -57,12 +57,42 @@ function loadScene()
     var eje = new THREE.Mesh(THREE.CylinderGeometry(20, 20, 18, 32), material);
     eje.rotateZ(Math.PI/2);
     brazo.add(eje);
-
     //elemento esparrago
     var esparrago = new THREE.Mesh(THREE.BoxGeometry(18,120,12), material);
     esparrago.rotateY(Math.PI/2);
     esparrago.position.set(0,50,0);
+    brazo.add(esparrago);
     //elemento rotula
     var rotula = new THREE.Mesh(THREE.SphereGeometry(20, 20, 20), material);
+    rotula.position.set(0,120,0);
+    brazo.add(rotula);
+
+    //Elemto antebrazo(tendra 3 elementos: disco, nervios, mano)
+    antebrazo = new THREE.Object3D();
+    antebrazo.position.set(0,120,0)
+
+    //elemento disco
+    var disco = new THREE.Mesh(THREE.CylinderGeometry(22, 22, 6, 32), material);
+    antebrazo.add(disco);
+
+    //elemento nervio 1:
+    var nervio1 = new THREE.Mesh(THREE.BoxGeometry(4,80,4), material);
+    nervio1.position.set(4, 0, -4);
+    antebrazo.add(nervio1);
+    //elemento nervio 2:
+    var nervio2 = new THREE.Mesh(THREE.BoxGeometry(4,80,4), material);
+    nervio2.position.set(-4, 0, -4);
+    antebrazo.add(nervio2);
+    //elemento nervio 3:
+    var nervio3 = new THREE.Mesh(THREE.BoxGeometry(4,80,4), material);
+    nervio3.position.set(4, 0, 4);
+    antebrazo.add(nervio3);
+    //elemento nervio 4:
+    var nervio4 = new THREE.Mesh(THREE.BoxGeometry(4,80,4), material);
+    nervio4.position.set(-4, 0, 4);
+    antebrazo.add(nervio4);
+
+    //Elemento mano (3 elementos:mano, pinzalz, pinzaDe)
+    mano = new THREE.Mesh(THREE.CylinderGeometry(15,15,40), material);
 
 }
