@@ -47,23 +47,23 @@ function loadScene()
     robot = new THREE.Object3D();
 
     //Base (Tiene dentro al brazo)
-    base = new THREE.Mesh(THREE.CylinderGeometry(50, 50, 15, 32), material);
+    base = new THREE.Mesh(new THREE.CylinderGeometry(50, 50, 15, 32), material);
     base.position.set(0,0,0);
 
     //Brazo (4 elementos: eje, esparrago, rotula, antebrazo)
     brazo = new THREE.Object3D();
 
     //elemento eje
-    var eje = new THREE.Mesh(THREE.CylinderGeometry(20, 20, 18, 32), material);
+    var eje = new THREE.Mesh(new THREE.CylinderGeometry(20, 20, 18, 32), material);
     eje.rotateZ(Math.PI/2);
     brazo.add(eje);
     //elemento esparrago
-    var esparrago = new THREE.Mesh(THREE.BoxGeometry(18,120,12), material);
+    var esparrago = new THREE.Mesh(new THREE.BoxGeometry(18,120,12), material);
     esparrago.rotateY(Math.PI/2);
     esparrago.position.set(0,50,0);
     brazo.add(esparrago);
     //elemento rotula
-    var rotula = new THREE.Mesh(THREE.SphereGeometry(20, 20, 20), material);
+    var rotula = new THREE.Mesh(new THREE.SphereGeometry(20, 20, 20), material);
     rotula.position.set(0,120,0);
     brazo.add(rotula);
 
@@ -72,28 +72,28 @@ function loadScene()
     antebrazo.position.set(0,120,0)
 
     //elemento disco
-    var disco = new THREE.Mesh(THREE.CylinderGeometry(22, 22, 6, 32), material);
+    var disco = new THREE.Mesh(new THREE.CylinderGeometry(22, 22, 6, 32), material);
     antebrazo.add(disco);
 
     //elemento nervio 1:
-    var nervio1 = new THREE.Mesh(THREE.BoxGeometry(4,80,4), material);
+    var nervio1 = new THREE.Mesh(new THREE.BoxGeometry(4,80,4), material);
     nervio1.position.set(8, 0, -4);
     antebrazo.add(nervio1);
     //elemento nervio 2:
-    var nervio2 = new THREE.Mesh(THREE.BoxGeometry(4,80,4), material);
+    var nervio2 = new THREE.Mesh(new THREE.BoxGeometry(4,80,4), material);
     nervio2.position.set(-8, 0, -4);
     antebrazo.add(nervio2);
     //elemento nervio 3:
-    var nervio3 = new THREE.Mesh(THREE.BoxGeometry(4,80,4), material);
+    var nervio3 = new THREE.Mesh(new THREE.BoxGeometry(4,80,4), material);
     nervio3.position.set(8, 0, 4);
     antebrazo.add(nervio3);
     //elemento nervio 4:
-    var nervio4 = new THREE.Mesh(THREE.BoxGeometry(4,80,4), material);
+    var nervio4 = new THREE.Mesh(new THREE.BoxGeometry(4,80,4), material);
     nervio4.position.set(-8, 0, 4);
     antebrazo.add(nervio4);
 
     //Elemento mano (3 elementos:mano, pinzalz, pinzaDe)
-    mano = new THREE.Mesh(THREE.CylinderGeometry(15,15,40), material);
+    mano = new THREE.Mesh(new THREE.CylinderGeometry(15,15,40), material);
     mano.position.set(0,80,0);
     mano.rotateZ(Math.PI/2);
 
