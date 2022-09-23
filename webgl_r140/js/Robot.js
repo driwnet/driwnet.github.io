@@ -146,7 +146,7 @@ function loadScene()
     var pinzaI = new THREE.Mesh(pinzageo, material);
     mano.add(pinzaI);
     //pinza derecha
-    var pinzaD = new THREE.Mesh(geopinza, matRobot);
+    var pinzaD = new THREE.Mesh(pinzageo, matRobot);
     pinzaD.rotateY(Math.PI / 2)
     pinzaD.position.set(0, 20, 0)
     mano.add(pinzaD);
